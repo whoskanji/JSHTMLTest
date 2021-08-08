@@ -26,6 +26,8 @@ async function pwnMe() {
 		} else {
 			socket.send("error", "Detected a unsupported version/device");
 		}
+	}else{
+		socket.send("error", "ur mom gey");
 	}
 }
 
