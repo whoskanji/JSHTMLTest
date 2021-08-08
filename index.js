@@ -26,9 +26,7 @@ async function pwnMe() {
 		} else {
 			socket.send("error", "Detected a unsupported version/device");
 		}
-	}else{
-        alert("exploitation only works over https");
-    }
+	}
 }
 
 const appHeight = () => {
