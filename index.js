@@ -13,17 +13,21 @@ function slideEasterEgg() {
 }
 
 async function pwnMe() {
-	document.getElementById("jbButton").disabled = true;
-	if (navigator.userAgent.includes("Mac OS X")) {
-		alert("MacOS is not supported");
-	} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-		socket.send("log_normal", "Starting exploitation for iOS 14.5");
-		await kickstart145();
-	} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-		socket.send("log_normal", "Starting exploitation for iOS 14.6");
-		await kickstart146();
-	} else {
-		socket.send("error", "Detected a unsupported version/device");
+	if (location.protocol = "https:") {
+		document.getElementById("jbButton").disabled = true;
+		if (navigator.userAgent.includes("Mac OS X")) {
+			alert("MacOS is not supported");
+		} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+			socket.send("log_normal", "Starting exploitation for iOS 14.5");
+			await kickstart145();
+		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
+			socket.send("log_normal", "Starting exploitation for iOS 14.6");
+			await kickstart146();
+		} else {
+			socket.send("error", "Detected a unsupported version/device");
+		}
+	}else{
+		socket.send("error", "ur mom gey");
 	}
 }
 
